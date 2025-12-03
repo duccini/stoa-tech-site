@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Code, Heart } from "lucide-react";
+import { ArrowRight, Code, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoSymbol from "@/assets/logo-symbol.png";
 
@@ -46,31 +46,6 @@ export function HeroSection() {
               <Button asChild variant="outline" size="lg" className="rounded-full px-8">
                 <Link to="/quem-somos">Conhecer a STOÁ</Link>
               </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 text-primary mb-1">
-                  <Users className="h-5 w-5" />
-                  <span className="text-2xl sm:text-3xl font-bold">40+</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Voluntários Ativos</p>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 text-primary mb-1">
-                  <Code className="h-5 w-5" />
-                  <span className="text-2xl sm:text-3xl font-bold">7</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Projetos em Andamento</p>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 text-primary mb-1">
-                  <Heart className="h-5 w-5" />
-                  <span className="text-2xl sm:text-3xl font-bold">4</span>
-                </div>
-                <p className="text-sm text-muted-foreground">ONGs Atendidas</p>
-              </div>
             </div>
           </div>
 
