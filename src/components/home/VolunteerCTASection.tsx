@@ -43,7 +43,8 @@ export function VolunteerCTASection() {
           backgroundImage: "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/98 via-background/95 to-background/90" />
+        <div className="absolute inset-0 bg-primary/85 dark:bg-primary/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-transparent to-background/60" />
       </div>
 
       <div className="container relative z-10">
