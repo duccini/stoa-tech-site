@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
 import SejaVoluntario from "./pages/SejaVoluntario";
+import Ajude from "./pages/Ajude";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/quem-somos" element={<QuemSomos />} />
             <Route path="/seja-voluntario" element={<SejaVoluntario />} />
+            <Route path="/ajude" element={<Ajude />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

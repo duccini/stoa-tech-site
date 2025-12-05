@@ -8,52 +8,52 @@
   :root {
     /* STOÁ Brand Colors */
     --cosmic-void: 250 74% 4%;
-    --deep-blue: 255 100% 50%;
-    --neon-vision: 290 100% 56%;
+    --deep-blue: 255 85% 45%;
+    --neon-vision: 290 80% 50%;
     --empathy-glow: 1 93% 88%;
     --soft-bloom: 0 71% 97%;
     
-    /* Light Mode */
+    /* Light Mode - Improved contrast */
     --background: 0 0% 100%;
-    --foreground: 250 74% 4%;
+    --foreground: 250 74% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 250 74% 4%;
+    --card-foreground: 250 74% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 74% 4%;
+    --popover-foreground: 250 74% 8%;
 
-    --primary: 255 100% 50%;
+    --primary: 255 85% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 71% 97%;
-    --secondary-foreground: 250 74% 4%;
+    --secondary: 250 30% 95%;
+    --secondary-foreground: 250 74% 8%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 250 30% 40%;
+    --muted: 250 20% 94%;
+    --muted-foreground: 250 30% 35%;
 
-    --accent: 290 100% 56%;
+    --accent: 290 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 255 100% 50%;
+    --border: 250 20% 88%;
+    --input: 250 20% 88%;
+    --ring: 255 85% 45%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-brand: linear-gradient(135deg, hsl(290 100% 56%) 0%, hsl(255 100% 50%) 50%, hsl(290 100% 70%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(255 100% 98%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 71% 98%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(290 80% 50%) 0%, hsl(255 85% 45%) 50%, hsl(290 80% 60%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(250 40% 97%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(250 30% 98%) 100%);
     
     /* Shadows */
-    --shadow-sm: 0 2px 8px -2px hsl(255 100% 50% / 0.1);
-    --shadow-md: 0 8px 24px -8px hsl(255 100% 50% / 0.15);
-    --shadow-lg: 0 16px 48px -12px hsl(255 100% 50% / 0.2);
-    --shadow-glow: 0 0 40px hsl(255 100% 50% / 0.3);
+    --shadow-sm: 0 2px 8px -2px hsl(250 50% 20% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(250 50% 20% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(250 50% 20% / 0.16);
+    --shadow-glow: 0 0 40px hsl(255 85% 45% / 0.25);
   }
 
   .dark {
@@ -199,4 +199,39 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* High Contrast Mode for Accessibility */
+.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --primary: 255 100% 35%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 95%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 20%;
+  --accent: 290 100% 40%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 50%;
+  --input: 0 0% 50%;
+}
+
+.dark.high-contrast {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 100%;
+  --primary: 255 100% 60%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 80%;
+  --accent: 290 100% 65%;
+  --accent-foreground: 0 0% 0%;
+  --border: 0 0% 50%;
+  --input: 0 0% 50%;
 }
