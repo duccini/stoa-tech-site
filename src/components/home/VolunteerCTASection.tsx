@@ -43,27 +43,26 @@ export function VolunteerCTASection() {
           backgroundImage: "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-primary/85 dark:bg-primary/90" />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-transparent to-background/60" />
+        <div className="absolute inset-0 bg-primary/80" />
       </div>
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 text-white">
         {/* Main Content */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20 hover:bg-accent/15">
+          <Badge className="mb-4 px-4 py-1.5 text-sm font-medium bg-white/20 text-white border-white/30 hover:bg-white/30">
             Seja Voluntário
           </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
             Construa sua carreira enquanto{" "}
-            <span className="text-gradient">transforma vidas</span>
+            <span className="text-accent">transforma vidas</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="text-white/90 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
             Junte-se a mais de 40 voluntários que crescem profissionalmente enquanto 
             desenvolvem soluções tecnológicas para ONGs que precisam de apoio.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="rounded-full px-8 gap-2 group">
+            <Button asChild size="lg" className="rounded-full px-8 gap-2 group bg-white text-primary hover:bg-white/90">
               <Link to="/seja-voluntario">
                 Quero Fazer a Diferença
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -74,56 +73,55 @@ export function VolunteerCTASection() {
 
         {/* Roles Grid */}
         <div className="mb-16">
-          <h3 className="text-xl font-semibold text-center mb-8">Áreas de atuação</h3>
+          <h3 className="text-xl font-semibold text-center mb-8 text-white">Áreas de atuação</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {roles.map((role) => (
               <div
                 key={role.title}
-                className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 text-center"
               >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <role.icon className="h-7 w-7 text-primary" />
+                <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
+                  <role.icon className="h-7 w-7 text-white" />
                 </div>
-                <h4 className="font-semibold mb-1">{role.title}</h4>
-                <p className="text-sm text-muted-foreground">{role.description}</p>
+                <h4 className="font-semibold mb-1 text-white">{role.title}</h4>
+                <p className="text-sm text-white/80">{role.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Benefits */}
-        <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
-          <h3 className="text-xl font-semibold text-center mb-6">Por que ser voluntário na STOÁ?</h3>
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <h3 className="text-xl font-semibold text-center mb-6 text-white">Por que ser voluntário na STOÁ?</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             {benefits.map((benefit) => (
-              <div key={benefit.text} className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50">
-                <div className="w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center flex-shrink-0">
+              <div key={benefit.text} className="flex items-start gap-3 p-4 rounded-xl bg-white/10">
+                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
                   <benefit.icon className="h-5 w-5 text-white" />
                 </div>
-                <p className="text-sm leading-relaxed pt-2">{benefit.text}</p>
+                <p className="text-sm leading-relaxed pt-2 text-white/90">{benefit.text}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* ONGs Section */}
-        <div className="mt-16 text-center bg-gradient-card rounded-2xl p-8 lg:p-12 border border-border/50">
-          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20">
+        <div className="mt-16 text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/20">
+          <Badge className="mb-4 px-4 py-1.5 text-sm font-medium bg-accent/20 text-accent border-accent/30">
             Para ONGs
           </Badge>
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
             Sua ONG precisa de soluções tecnológicas?
           </h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-white/80 max-w-2xl mx-auto mb-8">
             Se sua organização precisa de um site, aplicativo ou sistema mas não tem 
             recursos para contratar, a STOÁ pode ajudar. Todos os nossos serviços são 
-            <strong className="text-foreground"> 100% gratuitos</strong>.
+            <strong className="text-white"> 100% gratuitos</strong>.
           </p>
           <Button
             asChild
-            variant="secondary"
             size="lg"
-            className="rounded-full px-8 gap-2 group"
+            className="rounded-full px-8 gap-2 group bg-white text-primary hover:bg-white/90"
           >
             <Link to="/contato">
               Solicitar Apoio Tecnológico
