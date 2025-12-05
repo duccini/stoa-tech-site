@@ -6,6 +6,7 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { SolutionsSection } from "@/components/home/SolutionsSection";
 import { VolunteerCTASection } from "@/components/home/VolunteerCTASection";
 import { StatsSection } from "@/components/home/StatsSection";
+import { AccessibilityMenu } from "@/components/AccessibilityMenu";
 
 const Index = () => {
   return (
@@ -14,12 +15,13 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <TestimonialsSection />
-        <VolunteerCTASection />
         <SolutionsSection />
         <StatsSection />
+        <TestimonialsSection />
+        <VolunteerCTASection />
       </main>
       <Footer />
+      <AccessibilityMenu />
     </div>
   );
 };

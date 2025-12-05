@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const testimonials = [
   {
@@ -26,28 +27,38 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="py-20 md:py-28 bg-secondary/30">
-      <div className="container">
+    <section id="depoimentos" className="relative py-20 md:py-28 overflow-hidden">
+      {/* Parallax Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80')",
+        }}
+      >
+        <div className="absolute inset-0 bg-background/95 dark:bg-background/98" />
+      </div>
+
+      <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
             Depoimentos
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6">
-            Quem já <span className="text-gradient">transformou</span> com a gente
+          </Badge>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Histórias que <span className="text-gradient">inspiram</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Conheça as histórias de ONGs e voluntários que fazem parte da nossa
-            jornada de impacto social.
+            Conheça as experiências de ONGs e voluntários que fazem parte da nossa
+            jornada de transformação social.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-card rounded-2xl p-8 border border-border/50 shadow-sm hover:shadow-md transition-shadow"
+              className="relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
             >
-              <Quote className="h-10 w-10 text-primary/20 mb-4" />
+              <Quote className="h-10 w-10 text-primary/30 mb-4" />
               <blockquote className="text-foreground mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </blockquote>
