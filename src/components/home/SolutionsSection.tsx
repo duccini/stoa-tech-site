@@ -88,16 +88,13 @@ export function SolutionsSection() {
               { step: "02", title: "Planejamento", desc: "Definimos escopo, prazos e equipe" },
               { step: "03", title: "Desenvolvimento", desc: "Construímos a solução em sprints ágeis" },
               { step: "04", title: "Entrega e Suporte", desc: "Lançamos e oferecemos suporte contínuo" },
-            ].map((item, index) => (
-              <div key={item.step} className="text-center relative">
+            ].map((item) => (
+              <div key={item.step} className="text-center">
                 <div className="text-4xl font-bold text-gradient mb-3">
                   {item.step}
                 </div>
                 <h4 className="font-semibold mb-2">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-8 right-0 w-full h-px bg-border -translate-x-1/2" />
-                )}
               </div>
             ))}
           </div>
