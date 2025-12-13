@@ -20,7 +20,7 @@ export function VolunteerCTASection() {
           backgroundImage: "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-primary/90" />
       </div>
 
       <div className="container relative z-10 text-white">
