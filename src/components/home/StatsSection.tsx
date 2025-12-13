@@ -29,7 +29,7 @@ export function StatsSection() {
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <stat.icon className="h-6 w-6 text-primary" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-gradient dark:text-white mb-2">
                 {stat.value}
               </div>
               <p className="text-muted-foreground text-sm">{stat.label}</p>
