@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { PageTransition } from "@/components/PageTransition";
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
 import SejaVoluntario from "./pages/SejaVoluntario";
@@ -19,13 +20,15 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/quem-somos" element={<QuemSomos />} />
-            <Route path="/seja-voluntario" element={<SejaVoluntario />} />
-            <Route path="/ajude" element={<Ajude />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <PageTransition>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/quem-somos" element={<QuemSomos />} />
+              <Route path="/seja-voluntario" element={<SejaVoluntario />} />
+              <Route path="/ajude" element={<Ajude />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </PageTransition>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
