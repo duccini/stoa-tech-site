@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Rocket, Users2, Briefcase, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import volunteersBg from "@/assets/volunteers-diverse-team.jpg";
 
 const benefits = [
   { icon: Rocket, text: "Experiência em projetos reais com impacto mensurável" },
@@ -17,7 +18,7 @@ export function VolunteerCTASection() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80')",
+          backgroundImage: `url(${volunteersBg})`,
         }}
       >
         <div className="absolute inset-0 bg-background/95 dark:bg-background/98" />
