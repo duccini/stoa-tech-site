@@ -1,4 +1,5 @@
 import { Globe, Smartphone, Database, Palette, Cog, BarChart3 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const solutions = [
   {
@@ -44,9 +45,9 @@ export function SolutionsSection() {
     <section id="solucoes" className="py-20 md:py-28 bg-background">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 hover:bg-primary/15">
             Soluções
-          </span>
+          </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6">
             Tecnologia <span className="text-gradient">100% gratuita</span> para
             sua ONG
