@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-diverse-team.jpg";
 
 export function HeroSection() {
   return (
@@ -52,9 +53,9 @@ export function HeroSection() {
               {/* Main visual card */}
               <div className="relative bg-gradient-card rounded-3xl p-1 border border-border/50 shadow-lg overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=500&fit=crop"
-                  alt="Pessoas colaborando em projeto de tecnologia"
-                  className="w-full h-auto rounded-[1.25rem] object-cover aspect-[4/3]"
+                  src={heroBg}
+                  alt="Equipe diversa colaborando em projeto de tecnologia"
+                  className="w-full h-auto rounded-[1.25rem] object-cover aspect-[3/4]"
                 />
                 
                 {/* Overlay gradient */}
