@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-diverse-team.jpg";
+import heroBg from "@/assets/hero-team-hands.jpg";
 
 export function HeroSection() {
   return (
@@ -52,17 +52,8 @@ export function HeroSection() {
               
               {/* Main visual card */}
               <div className="relative bg-gradient-card rounded-3xl p-1 border border-border/50 shadow-lg overflow-hidden">
-                <img
-                  src={heroBg}
-                  alt="Equipe diversa colaborando em projeto de tecnologia"
-                  className="w-full h-auto rounded-[1.25rem] object-cover aspect-[3/4]"
-                />
-                
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent rounded-3xl" />
-                
-                {/* Floating stats */}
-                <div className="absolute bottom-4 left-4 right-4 flex gap-3">
+                {/* Floating stats - Top */}
+                <div className="absolute top-4 left-4 right-4 flex gap-3 z-10">
                   <div className="bg-card/90 backdrop-blur-sm rounded-xl p-3 flex items-center gap-2 border border-border/50 flex-1">
                     <Users className="h-5 w-5 text-primary" />
                     <div>
@@ -78,6 +69,15 @@ export function HeroSection() {
                     </div>
                   </div>
                 </div>
+
+                <img
+                  src={heroBg}
+                  alt="Equipe diversa unindo as mãos em colaboração"
+                  className="w-full h-auto rounded-[1.25rem] object-cover aspect-[3/4]"
+                />
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent rounded-3xl" />
               </div>
             </div>
           </div>
