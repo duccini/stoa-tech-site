@@ -56,13 +56,13 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+              className="relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300 flex flex-col h-full"
             >
               <Quote className="h-10 w-10 text-primary/30 mb-4" />
-              <blockquote className="text-foreground mb-6 leading-relaxed">
+              <blockquote className="text-foreground mb-6 leading-relaxed flex-1">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full bg-gradient-brand flex items-center justify-center">
                   <span className="text-white font-bold text-lg">
                     {testimonial.author.charAt(0)}
