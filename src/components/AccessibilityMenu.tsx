@@ -53,7 +53,7 @@ export function AccessibilityMenu() {
       <Button
         onClick={() => setIsOpen(!isOpen)}
         size="icon"
-        className="fixed bottom-6 left-6 z-50 rounded-full w-12 h-12 shadow-lg bg-primary hover:bg-primary/90"
+        className="fixed bottom-6 left-6 z-[100] rounded-full w-12 h-12 shadow-lg bg-primary hover:bg-primary/90"
         aria-label="Abrir menu de acessibilidade"
       >
         <Accessibility className="h-5 w-5" />
