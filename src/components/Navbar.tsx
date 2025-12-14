@@ -69,24 +69,39 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                if (handleNavClick(link.href)) {
-                  e.preventDefault();
-                }
-              }}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                isActive(link.href)
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isHashLink = link.href.startsWith("/#");
+            
+            if (isHashLink) {
+              return (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive(link.href)
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              );
+            }
+            
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  isActive(link.href)
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
@@ -127,25 +142,43 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border animate-fade-in">
           <div className="container py-4 flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  setIsOpen(false);
-                  if (handleNavClick(link.href)) {
-                    e.preventDefault();
-                  }
-                }}
-                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  isActive(link.href)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isHashLink = link.href.startsWith("/#");
+              
+              if (isHashLink) {
+                return (
+                  <button
+                    key={link.href}
+                    onClick={() => {
+                      setIsOpen(false);
+                      handleNavClick(link.href);
+                    }}
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors text-left ${
+                      isActive(link.href)
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                );
+              }
+              
+              return (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                    isActive(link.href)
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Button asChild className="mt-2 rounded-full">
               <Link to="/seja-voluntario" onClick={() => setIsOpen(false)}>
                 Quero Ajudar
