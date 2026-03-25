@@ -10,7 +10,7 @@ import { ONGSection } from "@/components/home/ONGSection";
 import { StatsSection } from "@/components/home/StatsSection";
 import { AccessibilityMenu } from "@/components/AccessibilityMenu";
 
-const Index = () => {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -28,6 +28,4 @@ const Index = () => {
       <AccessibilityMenu />
     </div>
   );
-};
-
-export default Index;
+}

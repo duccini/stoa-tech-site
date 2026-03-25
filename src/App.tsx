@@ -5,11 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { PageTransition } from "@/components/PageTransition";
-import Index from "./pages/Index";
-import QuemSomos from "./pages/QuemSomos";
-import SejaVoluntario from "./pages/SejaVoluntario";
-import Ajude from "./pages/Ajude";
-import NotFound from "./pages/NotFound";
+import Index from "./app/extra";
+import QuemSomos from "./app/quem-somos/page";
+import SejaVoluntario from "./app/seja-voluntario/page";
+import Ajude from "./app/ajude/page";
+import NotFound from "./app/404";
 
 const queryClient = new QueryClient();
 

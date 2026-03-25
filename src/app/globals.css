@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
 @layer base {
   :root {
     /* STOÁ Brand Colors */
@@ -12,7 +10,7 @@
     --neon-vision: 290 80% 50%;
     --empathy-glow: 1 93% 88%;
     --soft-bloom: 0 71% 97%;
-    
+
     /* Light Mode - Improved contrast */
     --background: 0 0% 100%;
     --foreground: 250 74% 8%;
@@ -45,10 +43,23 @@
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-brand: linear-gradient(135deg, hsl(290 80% 50%) 0%, hsl(255 85% 45%) 50%, hsl(290 80% 60%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(250 40% 97%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(250 30% 98%) 100%);
-    
+    --gradient-brand: linear-gradient(
+      135deg,
+      hsl(290 80% 50%) 0%,
+      hsl(255 85% 45%) 50%,
+      hsl(290 80% 60%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(250 40% 97%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(250 30% 98%) 100%
+    );
+
     /* Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(250 50% 20% / 0.08);
     --shadow-md: 0 8px 24px -8px hsl(250 50% 20% / 0.12);
@@ -85,9 +96,17 @@
     --input: 250 40% 15%;
     --ring: 255 100% 50%;
 
-    --gradient-hero: linear-gradient(180deg, hsl(250 74% 4%) 0%, hsl(250 60% 8%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(250 50% 10%) 0%, hsl(250 40% 8%) 100%);
-    
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(250 74% 4%) 0%,
+      hsl(250 60% 8%) 100%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(250 50% 10%) 0%,
+      hsl(250 40% 8%) 100%
+    );
+
     --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
     --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.4);
     --shadow-lg: 0 16px 48px -12px hsl(0 0% 0% / 0.5);
@@ -153,7 +172,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -162,7 +182,8 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {

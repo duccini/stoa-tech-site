@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, Heart, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-team-hands.jpg";
 
 export function HeroSection() {
   return (
@@ -43,7 +42,7 @@ export function HeroSection() {
                 size="lg"
                 className="rounded-full px-8 gap-2 group"
               >
-                <Link to="/seja-voluntario">
+                <Link href="/seja-voluntario">
                   Seja Voluntário
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -53,7 +52,7 @@ export function HeroSection() {
                 size="lg"
                 className="rounded-full px-8 gap-2 group"
               >
-                <Link to="/ajude">
+                <Link href="/ajude">
                   Ajude a STOÁ
                   <Heart className="h-4 w-4 transition-transform group-hover:scale-110" />
                 </Link>
@@ -93,7 +92,7 @@ export function HeroSection() {
                 </div>
 
                 <img
-                  src={heroBg}
+                  src="/assets/hero-team-hands.jpg"
                   alt="Equipe diversa unindo as mãos em colaboração"
                   className="w-full h-auto rounded-[1.25rem] object-cover aspect-[3/4]"
                 />

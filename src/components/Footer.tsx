@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Mail, Linkedin, Instagram, Github } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-import logoHorizontal from "@/assets/logo-horizontal.png";
-import logoLight from "@/assets/logo-light.png";
 
 export function Footer() {
   const { theme } = useTheme();
@@ -14,9 +14,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <Link to="/">
+            <Link href="/">
               <img
-                src={isDark ? logoLight : logoHorizontal}
+                src={
+                  isDark
+                    ? "/assets/logo-light.png"
+                    : "/assets/logo-horizontal.png"
+                }
                 alt="STOÁ"
                 className="h-10 w-auto mb-4"
               />
@@ -66,7 +70,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/"
+                  href="/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Início
@@ -74,7 +78,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/quem-somos"
+                  href="/quem-somos"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Quem Somos
@@ -82,7 +86,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/#solucoes"
+                  href="/#solucoes"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Soluções
@@ -90,7 +94,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/#depoimentos"
+                  href="/#depoimentos"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Depoimentos
@@ -105,7 +109,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/seja-voluntario"
+                  href="/seja-voluntario"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Seja Voluntário
@@ -121,7 +125,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/seja-voluntario"
+                  href="/seja-voluntario"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Preciso de Ajuda Tech
