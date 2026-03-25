@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Mail, Linkedin, Instagram, Github } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "next-themes";
 
 export function Footer() {
   const { theme } = useTheme();

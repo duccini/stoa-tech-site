@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { AboutSection } from "@/components/home/AboutSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -13,7 +11,6 @@ import { AccessibilityMenu } from "@/components/AccessibilityMenu";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <main>
         <HeroSection />
         <AboutSection />
@@ -24,7 +21,7 @@ export default function Home() {
         <VolunteerRolesSection />
         <StatsSection />
       </main>
-      <Footer />
+
       <AccessibilityMenu />
     </div>
   );
