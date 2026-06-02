@@ -153,7 +153,9 @@ export function Navbar() {
             )}
           </Button>
           <Button asChild variant="default" className="rounded-full px-6">
-            <Link href="/seja-voluntario">Quero Ajudar</Link>
+            <Link href="https://www.vakinha.com.br/vaquinha/regularize-a-ong-stoa">
+              Quero Ajudar
+            </Link>
           </Button>
         </div>
 
@@ -223,7 +225,10 @@ export function Navbar() {
               );
             })}
             <Button asChild className="mt-2 rounded-full">
-              <Link href="/seja-voluntario" onClick={() => setIsOpen(false)}>
+              <Link
+                href="https://www.vakinha.com.br/vaquinha/regularize-a-ong-stoa"
+                onClick={() => setIsOpen(false)}
+              >
                 Quero Ajudar
               </Link>
             </Button>

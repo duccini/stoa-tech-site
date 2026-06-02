@@ -12,6 +12,14 @@ import { Badge } from "@/components/ui/badge";
 
 const helpOptions = [
   {
+    icon: HandCoins,
+    title: "Doação Financeira",
+    description:
+      "Sua contribuição ajuda a manter nossa estrutura e ampliar o impacto dos nossos projetos para mais ONGs.",
+    cta: "Fazer doação",
+    link: "https://www.vakinha.com.br/vaquinha/regularize-a-ong-stoa",
+  },
+  {
     icon: Users,
     title: "Seja Voluntário",
     description:
@@ -28,14 +36,7 @@ const helpOptions = [
     cta: "Propor parceria",
     link: "/contato",
   },
-  {
-    icon: HandCoins,
-    title: "Doação Financeira",
-    description:
-      "Sua contribuição ajuda a manter nossa estrutura e ampliar o impacto dos nossos projetos para mais ONGs.",
-    cta: "Fazer doação",
-    link: "https://www.vakinha.com.br/vaquinha/regularize-a-ong-stoa",
-  },
+
   {
     icon: Share2,
     title: "Divulgue Nossa Causa",
