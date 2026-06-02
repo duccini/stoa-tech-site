@@ -34,7 +34,7 @@ const helpOptions = [
     description:
       "Sua contribuição ajuda a manter nossa estrutura e ampliar o impacto dos nossos projetos para mais ONGs.",
     cta: "Fazer doação",
-    link: "/contato",
+    link: "https://www.vakinha.com.br/vaquinha/regularize-a-ong-stoa",
   },
   {
     icon: Share2,
