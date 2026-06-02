@@ -1,5 +1,15 @@
+"use client";
+
 import { useState } from "react";
-import { Accessibility, ZoomIn, ZoomOut, Eye, Contrast, RotateCcw, X } from "lucide-react";
+import {
+  Accessibility,
+  ZoomIn,
+  ZoomOut,
+  Eye,
+  Contrast,
+  RotateCcw,
+  X,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function AccessibilityMenu() {
@@ -81,7 +91,9 @@ export function AccessibilityMenu() {
           <div className="space-y-4">
             {/* Font Size */}
             <div>
-              <p className="text-sm text-muted-foreground mb-2">Tamanho do texto: {fontSize}%</p>
+              <p className="text-sm text-muted-foreground mb-2">
+                Tamanho do texto: {fontSize}%
+              </p>
               <div className="flex gap-2">
                 <Button
                   variant="outline"

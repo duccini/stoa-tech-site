@@ -1,15 +1,26 @@
+import Link from "next/link";
+
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Users, Target, Heart, Lightbulb, Shield, Sparkles } from "lucide-react";
+
+import {
+  ArrowRight,
+  Calendar,
+  Users,
+  Target,
+  Heart,
+  Lightbulb,
+  Shield,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoSymbol from "@/assets/logo-symbol.png";
 
 const timeline = [
   {
     date: "Julho 2024",
     title: "Fundação da STOÁ",
-    description: "A STOÁ nasce da vontade de criar oportunidades através da tecnologia.",
+    description:
+      "A STOÁ nasce da vontade de criar oportunidades através da tecnologia.",
   },
   {
     date: "Agosto 2024",
@@ -24,7 +35,8 @@ const timeline = [
   {
     date: "2025",
     title: "Expansão",
-    description: "Crescimento da equipe para 40+ voluntários e 7 projetos em andamento.",
+    description:
+      "Crescimento da equipe para 40+ voluntários e 7 projetos em andamento.",
   },
 ];
 
@@ -32,40 +44,44 @@ const values = [
   {
     icon: Target,
     title: "Transformar com propósito",
-    description: "Transformar realidades por meio da tecnologia e do trabalho voluntário.",
+    description:
+      "Transformar realidades por meio da tecnologia e do trabalho voluntário.",
   },
   {
     icon: Lightbulb,
     title: "Abraçar desafios",
-    description: "Aceitar projetos difíceis como oportunidades de crescer e gerar impacto verdadeiro.",
+    description:
+      "Aceitar projetos difíceis como oportunidades de crescer e gerar impacto verdadeiro.",
   },
   {
     icon: Heart,
     title: "Confiar nas pessoas",
-    description: "Praticar a autonomia, o respeito e o autogerenciamento com responsabilidade e empatia.",
+    description:
+      "Praticar a autonomia, o respeito e o autogerenciamento com responsabilidade e empatia.",
   },
   {
     icon: Users,
     title: "Valorizar a diversidade",
-    description: "Acolher pessoas de todas as idades, regiões e trajetórias, reconhecendo a riqueza de cada história.",
+    description:
+      "Acolher pessoas de todas as idades, regiões e trajetórias, reconhecendo a riqueza de cada história.",
   },
   {
     icon: Sparkles,
     title: "Crescer e aprender juntos",
-    description: "Fazer de cada projeto um espaço de desenvolvimento humano e profissional.",
+    description:
+      "Fazer de cada projeto um espaço de desenvolvimento humano e profissional.",
   },
   {
     icon: Shield,
     title: "Fazer com o coração",
-    description: "Agir com empatia, colaboração e comprometimento em tudo o que construímos.",
+    description:
+      "Agir com empatia, colaboração e comprometimento em tudo o que construímos.",
   },
 ];
 
 const QuemSomos = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-      
       <main className="pt-20">
         {/* Hero */}
         <section className="py-20 md:py-28 bg-gradient-hero relative overflow-hidden">
@@ -93,11 +109,15 @@ const QuemSomos = () => {
                   Nosso nome é inspirado na palavra grega "STOÁ", origem do
                   estoicismo, simbolizando nossa construção coletiva e
                   comprometida. Somos uma comunidade de desenvolvedores,
-                  designers, e outros profissionais unidos pelo desejo de fazer a
-                  diferença.
+                  designers, e outros profissionais unidos pelo desejo de fazer
+                  a diferença.
                 </p>
-                <Button asChild size="lg" className="rounded-full px-8 gap-2 group">
-                  <Link to="/seja-voluntario">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full px-8 gap-2 group"
+                >
+                  <Link href="/seja-voluntario">
                     Faça Parte
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -109,7 +129,7 @@ const QuemSomos = () => {
                   <div className="absolute inset-0 bg-gradient-brand rounded-3xl blur-3xl opacity-30 scale-110" />
                   <div className="relative bg-gradient-card rounded-3xl p-12 border border-border/50">
                     <img
-                      src={logoSymbol}
+                      src="/assets/logo-symbol.png"
                       alt="STOÁ Symbol"
                       className="w-48 md:w-64 h-auto"
                     />
@@ -142,9 +162,10 @@ const QuemSomos = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-4">Nossa Visão</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Ser, até 2028, uma ONG de referência nacional no fortalecimento
-                  do terceiro setor por meio da tecnologia e no desenvolvimento
-                  de profissionais que unem propósito e excelência técnica.
+                  Ser, até 2028, uma ONG de referência nacional no
+                  fortalecimento do terceiro setor por meio da tecnologia e no
+                  desenvolvimento de profissionais que unem propósito e
+                  excelência técnica.
                 </p>
               </div>
 
@@ -235,7 +256,7 @@ const QuemSomos = () => {
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: "40+", label: "Voluntários Ativos" },
+                { value: "30+", label: "Voluntários Ativos" },
                 { value: "7", label: "Projetos em Andamento" },
                 { value: "4", label: "ONGs Atendidas" },
                 { value: "100%", label: "Gratuito" },
@@ -265,22 +286,29 @@ const QuemSomos = () => {
                 a diferença.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="rounded-full px-8 gap-2 group">
-                  <Link to="/seja-voluntario">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full px-8 gap-2 group"
+                >
+                  <Link href="/seja-voluntario">
                     Ser Voluntário
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full px-8">
-                  <Link to="/">Voltar ao Início</Link>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full px-8"
+                >
+                  <Link href="/">Voltar ao Início</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };

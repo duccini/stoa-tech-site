@@ -1,10 +1,13 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+"use client";
+
+import { useEffect, useState } from "react";
+
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import logoHorizontal from "@/assets/logo-horizontal.png";
-import logoLight from "@/assets/logo-light.png";
 
 const navLinks = [
   { href: "/", label: "Início" },
@@ -16,30 +19,50 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState("");
   const { theme, setTheme } = useTheme();
-  const location = useLocation();
-  const navigate = useNavigate();
+
+  const pathname = usePathname(); // Substitui location.pathname
+  const router = useRouter(); // Substitui navigate
+
+  // Efeito para monitorar mudanças no Hash (âncoras)
+  useEffect(() => {
+    // Define o hash inicial
+    setCurrentHash(window.location.hash);
+
+    // Ouve mudanças no hash (cliques em âncoras)
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const isDark = theme === "dark";
 
   const handleNavClick = (href: string) => {
     if (href.startsWith("/#")) {
       const sectionId = href.replace("/#", "");
-      if (location.pathname === "/") {
-        // Already on home page, just scroll
+
+      if (pathname === "/") {
+        // Já está na home, apenas rola para a seção
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        // Navigate to home then scroll
-        navigate("/");
+        // Navega para a home.
+        // Dica: O Next.js já lida com âncoras se você passar o caminho completo.
+        router.push("/");
+
+        // O timeout ainda é uma técnica válida para esperar a nova página montar
         setTimeout(() => {
           const element = document.getElementById(sectionId);
           if (element) {
             element.scrollIntoView({ behavior: "smooth" });
           }
-        }, 100);
+        }, 150);
       }
       return true;
     }
@@ -51,17 +74,29 @@ export function Navbar() {
   };
 
   const isActive = (href: string) => {
-    if (href === "/") return location.pathname === "/";
-    if (href.startsWith("/#")) return location.pathname === "/" && location.hash === href.replace("/", "");
-    return location.pathname === href;
+    // Caso 1: Home exata
+    if (href === "/") {
+      return pathname === "/" && currentHash === "";
+    }
+
+    // Caso 2: Links de âncora (ex: /#quem-somos)
+    if (href.startsWith("/#")) {
+      const targetHash = href.replace("/", ""); // vira "#quem-somos"
+      return pathname === "/" && currentHash === targetHash;
+    }
+
+    // Caso 3: Outras rotas (ex: /contato)
+    return pathname === href;
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-sm">
       <nav className="container mx-auto flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img
-            src={isDark ? logoLight : logoHorizontal}
+            src={
+              isDark ? "/assets/logo-light.png" : "/assets/logo-horizontal.png"
+            }
             alt="STOÁ"
             className="h-8 md:h-10 w-auto"
           />
@@ -71,7 +106,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
             const isHashLink = link.href.startsWith("/#");
-            
+
             if (isHashLink) {
               return (
                 <button
@@ -87,11 +122,11 @@ export function Navbar() {
                 </button>
               );
             }
-            
+
             return (
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-primary bg-primary/10"
@@ -111,10 +146,14 @@ export function Navbar() {
             onClick={toggleTheme}
             className="rounded-full"
           >
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            {isDark ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
           </Button>
           <Button asChild variant="default" className="rounded-full px-6">
-            <Link to="/seja-voluntario">Quero Ajudar</Link>
+            <Link href="/seja-voluntario">Quero Ajudar</Link>
           </Button>
         </div>
 
@@ -126,7 +165,11 @@ export function Navbar() {
             onClick={toggleTheme}
             className="rounded-full"
           >
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            {isDark ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
           </Button>
           <Button
             variant="ghost"
@@ -144,7 +187,7 @@ export function Navbar() {
           <div className="container py-4 flex flex-col gap-2">
             {navLinks.map((link) => {
               const isHashLink = link.href.startsWith("/#");
-              
+
               if (isHashLink) {
                 return (
                   <button
@@ -163,11 +206,11 @@ export function Navbar() {
                   </button>
                 );
               }
-              
+
               return (
                 <Link
                   key={link.href}
-                  to={link.href}
+                  href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     isActive(link.href)
@@ -180,7 +223,7 @@ export function Navbar() {
               );
             })}
             <Button asChild className="mt-2 rounded-full">
-              <Link to="/seja-voluntario" onClick={() => setIsOpen(false)}>
+              <Link href="/seja-voluntario" onClick={() => setIsOpen(false)}>
                 Quero Ajudar
               </Link>
             </Button>

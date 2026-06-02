@@ -2,7 +2,7 @@ import { Users, Code, Heart, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const stats = [
-  { icon: Users, value: "40+", label: "Voluntários Ativos" },
+  { icon: Users, value: "30+", label: "Voluntários Ativos" },
   { icon: Code, value: "7", label: "Projetos em Andamento" },
   { icon: Heart, value: "4", label: "ONGs Atendidas" },
   { icon: Award, value: "100%", label: "Gratuito" },
@@ -13,7 +13,10 @@ export function StatsSection() {
     <section className="py-20 md:py-28 bg-gradient-hero">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent border-primary/20 dark:border-accent/20 hover:bg-primary/15 dark:hover:bg-accent/15">
+          <Badge
+            variant="secondary"
+            className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent border-primary/20 dark:border-accent/20 hover:bg-primary/15 dark:hover:bg-accent/15"
+          >
             Nosso Impacto
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mt-3">

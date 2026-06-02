@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -76,6 +78,8 @@ const SejaVoluntario = () => {
       return;
     }
 
+    console.log("Form Data:", formData);
+
     setIsSubmitting(true);
 
     // Simulate form submission
@@ -93,7 +97,6 @@ const SejaVoluntario = () => {
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
         <main className="pt-20">
           <section className="py-20 md:py-32">
             <div className="container">
@@ -120,15 +123,12 @@ const SejaVoluntario = () => {
             </div>
           </section>
         </main>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-
       <main className="pt-20">
         {/* Hero */}
         <section className="py-16 md:py-24 bg-gradient-hero relative overflow-hidden">
@@ -345,7 +345,10 @@ const SejaVoluntario = () => {
                       })
                     }
                   />
-                  <Label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed">
+                  <Label
+                    htmlFor="terms"
+                    className="text-sm text-muted-foreground leading-relaxed"
+                  >
                     Concordo em receber comunicações da STOÁ e entendo que meus
                     dados serão usados apenas para fins de voluntariado.
                   </Label>
@@ -371,8 +374,6 @@ const SejaVoluntario = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };

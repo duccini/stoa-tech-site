@@ -1,7 +1,12 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
-import { Heart, Users, Building2, HandCoins, Share2, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import {
+  Heart,
+  Users,
+  Building2,
+  HandCoins,
+  Share2,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -9,7 +14,8 @@ const helpOptions = [
   {
     icon: Users,
     title: "Seja Voluntário",
-    description: "Doe seu tempo e talento. Desenvolvedores, designers, gestores de projeto e mais — todos são bem-vindos para ajudar ONGs a crescerem.",
+    description:
+      "Doe seu tempo e talento. Desenvolvedores, designers, gestores de projeto e mais — todos são bem-vindos para ajudar ONGs a crescerem.",
     cta: "Quero ser voluntário",
     link: "/seja-voluntario",
     highlight: true,
@@ -17,21 +23,24 @@ const helpOptions = [
   {
     icon: Building2,
     title: "Parceria Institucional",
-    description: "Sua empresa pode apoiar a STOÁ através de parcerias estratégicas, oferecendo recursos, mentoria ou infraestrutura.",
+    description:
+      "Sua empresa pode apoiar a STOÁ através de parcerias estratégicas, oferecendo recursos, mentoria ou infraestrutura.",
     cta: "Propor parceria",
     link: "/contato",
   },
   {
     icon: HandCoins,
     title: "Doação Financeira",
-    description: "Sua contribuição ajuda a manter nossa estrutura e ampliar o impacto dos nossos projetos para mais ONGs.",
+    description:
+      "Sua contribuição ajuda a manter nossa estrutura e ampliar o impacto dos nossos projetos para mais ONGs.",
     cta: "Fazer doação",
-    link: "/contato",
+    link: "https://www.vakinha.com.br/vaquinha/regularize-a-ong-stoa",
   },
   {
     icon: Share2,
     title: "Divulgue Nossa Causa",
-    description: "Compartilhe nosso trabalho nas redes sociais e ajude mais pessoas a conhecerem a STOÁ e seu impacto.",
+    description:
+      "Compartilhe nosso trabalho nas redes sociais e ajude mais pessoas a conhecerem a STOÁ e seu impacto.",
     cta: "Ver redes sociais",
     link: "/contato",
   },
@@ -40,21 +49,26 @@ const helpOptions = [
 const Ajude = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <main>
         {/* Hero */}
         <section className="pt-32 pb-20 bg-gradient-hero">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20">
+              <Badge
+                variant="secondary"
+                className="mb-4 px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20"
+              >
                 Faça Parte da Mudança
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Ajude a STOÁ a <span className="text-gradient">transformar</span> o terceiro setor
+                Ajude a STOÁ a{" "}
+                <span className="text-gradient">transformar</span> o terceiro
+                setor
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Existem várias formas de contribuir com nossa missão. Escolha a que melhor 
-                se encaixa no seu perfil e faça parte dessa transformação.
+                Existem várias formas de contribuir com nossa missão. Escolha a
+                que melhor se encaixa no seu perfil e faça parte dessa
+                transformação.
               </p>
             </div>
           </div>
@@ -68,8 +82,8 @@ const Ajude = () => {
                 <div
                   key={option.title}
                   className={`relative rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg ${
-                    option.highlight 
-                      ? "bg-gradient-card border-primary/30 hover:border-primary/50" 
+                    option.highlight
+                      ? "bg-gradient-card border-primary/30 hover:border-primary/50"
                       : "bg-card border-border/50 hover:border-primary/30"
                   }`}
                 >
@@ -86,7 +100,7 @@ const Ajude = () => {
                     {option.description}
                   </p>
                   <Button asChild className="rounded-full gap-2 group">
-                    <Link to={option.link}>
+                    <Link href={option.link}>
                       {option.cta}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
@@ -103,20 +117,26 @@ const Ajude = () => {
             <div className="max-w-3xl mx-auto text-center">
               <Heart className="h-12 w-12 text-accent mx-auto mb-6" />
               <h2 className="text-3xl font-bold mb-6">
-                Sua ajuda gera <span className="text-gradient">impacto real</span>
+                Sua ajuda gera{" "}
+                <span className="text-gradient">impacto real</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Cada contribuição — seja tempo, conhecimento ou recursos — ajuda a fortalecer 
-                organizações que trabalham por causas essenciais em todo o Brasil.
+                Cada contribuição — seja tempo, conhecimento ou recursos — ajuda
+                a fortalecer organizações que trabalham por causas essenciais em
+                todo o Brasil.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <p className="text-3xl font-bold text-gradient">4+</p>
-                  <p className="text-sm text-muted-foreground">ONGs Atendidas</p>
+                  <p className="text-sm text-muted-foreground">
+                    ONGs Atendidas
+                  </p>
                 </div>
                 <div className="text-center">
                   <p className="text-3xl font-bold text-gradient">7</p>
-                  <p className="text-sm text-muted-foreground">Projetos Ativos</p>
+                  <p className="text-sm text-muted-foreground">
+                    Projetos Ativos
+                  </p>
                 </div>
                 <div className="text-center">
                   <p className="text-3xl font-bold text-gradient">40+</p>
@@ -127,7 +147,6 @@ const Ajude = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
